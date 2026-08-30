@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "yt-dlp Video Downloader",
+  "version": "1.0.0",
+  "description": "Download videos and audio from YouTube, Twitch, and 1000+ sites for free with zero limits using yt-dlp.",
+  "permissions": [
+    "activeTab",
+    "nativeMessaging",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "yt-dlp Downloader",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ytdlp-downloader@antigravity.local"
+    }
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApfpT92a6vvsAEeNJaXj7QK6eKHfsGowvnbDXx9/Pelgcg8ibav9OJiD8msuCggUGj+mnsA0m9Kxl086A0xCrwI8T1RDxn8SmzpVOt9cGDRPtD+mM4lEZPphUFDWa/wGQbseCBUM+ipNo4lCQtBCL7UYuLeWySKr/cjfNezH4PJiTmUdVI24G7ceuPiCVSxtqm7bR12efQ/ba1DjH2rTCHjR25/RB2bjcv6WH8GrA1aYFZOQvg7KD6XtNX8SZUiL2CNGn0z51GhrhocYGZxCrZfT4hkstLWeo22ffY8SNXFxvD4q1/hJ2rYimqDf50bLSM8uqfyoDd+yXAmR45q8SfQIDAQAB"
+}

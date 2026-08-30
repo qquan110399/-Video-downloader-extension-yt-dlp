@@ -1,0 +1,9 @@
+{
+  "name": "ytdlp_native_host",
+  "description": "yt-dlp Native Host for Firefox Extension",
+  "path": "ytdlp_host_runner.bat",
+  "type": "stdio",
+  "allowed_extensions": [
+    "ytdlp-downloader@antigravity.local"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "ytdlp_native_host",
+  "description": "yt-dlp Native Host for Chrome/Edge/Brave Extension",
+  "path": "ytdlp_host_runner.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://bnmhkcjfihcofbkimncbfgofgjlhjenb/"
+  ]
+}
