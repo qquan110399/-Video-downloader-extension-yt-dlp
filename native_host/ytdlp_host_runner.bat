@@ -29,12 +29,28 @@ if exist "C:\Python312\python.exe" (
     "C:\Python312\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
     exit /b %ERRORLEVEL%
 )
-if exist "%LOCALAPPDATA%\Programs\Python\Python312\python.exe" (
-    "%LOCALAPPDATA%\Programs\Python\Python312\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
+if exist "C:\Python311\python.exe" (
+    "C:\Python311\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
+    exit /b %ERRORLEVEL%
+)
+if exist "C:\Python310\python.exe" (
+    "C:\Python310\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
+    exit /b %ERRORLEVEL%
+)
+if exist "%LOCALAPPDATA%\Programs\Python\Python314\python.exe" (
+    "%LOCALAPPDATA%\Programs\Python\Python314\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
     exit /b %ERRORLEVEL%
 )
 if exist "%LOCALAPPDATA%\Programs\Python\Python313\python.exe" (
     "%LOCALAPPDATA%\Programs\Python\Python313\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
+    exit /b %ERRORLEVEL%
+)
+if exist "%LOCALAPPDATA%\Programs\Python\Python312\python.exe" (
+    "%LOCALAPPDATA%\Programs\Python\Python312\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
+    exit /b %ERRORLEVEL%
+)
+if exist "%LOCALAPPDATA%\Programs\Python\Python311\python.exe" (
+    "%LOCALAPPDATA%\Programs\Python\Python311\python.exe" -u "%SCRIPT_DIR%ytdlp_native_host.py" %*
     exit /b %ERRORLEVEL%
 )
 

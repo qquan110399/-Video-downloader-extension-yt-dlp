@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const browseBtn = document.getElementById("browseBtn");
   const downloadBtn = document.getElementById("downloadBtn");
   const hostStatus = document.getElementById("hostStatus");
+  const reconnectBtn = document.getElementById("reconnectBtn");
+  const offlineNotice = document.getElementById("offlineNotice");
+  const alertRetryBtn = document.getElementById("alertRetryBtn");
   
   const progressContainer = document.getElementById("progressContainer");
   const statusText = document.getElementById("statusText");
@@ -16,6 +19,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const speedText = document.getElementById("speedText");
   const etaText = document.getElementById("etaText");
   const logArea = document.getElementById("logArea");
+
+  let port = null;
+  let isConnected = false;
 
   // Load saved download folder from local storage
   try {
@@ -46,40 +52,80 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("Could not fetch tab URL", err);
   }
 
-  // Native host connection
-  let port = null;
+  function setHostOffline(reason) {
+    isConnected = false;
+    port = null;
+    hostStatus.textContent = "Offline (Host not ready)";
+    hostStatus.className = "badge offline";
+    if (reconnectBtn) reconnectBtn.classList.remove("hidden");
+    if (offlineNotice) offlineNotice.classList.remove("hidden");
+    if (reason) {
+      logMessage("Native Host Status: " + reason);
+    }
+  }
+
+  function setHostOnline(version) {
+    isConnected = true;
+    hostStatus.textContent = "Ready (yt-dlp v" + (version || "ok") + ")";
+    hostStatus.className = "badge online";
+    if (reconnectBtn) reconnectBtn.classList.remove("hidden");
+    if (offlineNotice) offlineNotice.classList.add("hidden");
+  }
 
   function connectNativeHost() {
+    if (port) {
+      try { port.disconnect(); } catch (e) {}
+      port = null;
+    }
+
+    hostStatus.textContent = "Connecting...";
+    hostStatus.className = "badge";
+
     try {
+      if (!browserAPI.runtime || !browserAPI.runtime.connectNative) {
+        setHostOffline("Native messaging API not supported in this context.");
+        return null;
+      }
+
       port = browserAPI.runtime.connectNative(nativeHostName);
-      
+
+      if (!port) {
+        setHostOffline("Could not initiate native port connection.");
+        return null;
+      }
+
       port.onMessage.addListener((msg) => {
         handleNativeMessage(msg);
       });
 
       port.onDisconnect.addListener((p) => {
+        let errMsg = "Host disconnected.";
         if (browserAPI.runtime && browserAPI.runtime.lastError) {
-          hostStatus.textContent = "Offline (Host not ready)";
-          hostStatus.className = "badge offline";
-          logMessage("Connection Error: " + browserAPI.runtime.lastError.message);
-        } else {
-          hostStatus.textContent = "Disconnected";
-          hostStatus.className = "badge offline";
+          errMsg = browserAPI.runtime.lastError.message;
         }
+        setHostOffline(errMsg);
       });
 
-      // Ping test
-      port.postMessage({ action: "ping" });
+      // Send ping test
+      try {
+        port.postMessage({ action: "ping" });
+      } catch (postErr) {
+        setHostOffline(postErr.message);
+        return null;
+      }
+
+      return port;
     } catch (e) {
-      hostStatus.textContent = "Offline";
-      hostStatus.className = "badge offline";
+      setHostOffline(e.message);
+      return null;
     }
   }
 
   function handleNativeMessage(msg) {
+    if (!msg) return;
+
     if (msg.status === "pong") {
-      hostStatus.textContent = "Ready (yt-dlp v" + (msg.version || "ok") + ")";
-      hostStatus.className = "badge online";
+      setHostOnline(msg.version);
     } else if (msg.status === "folder_selected") {
       if (msg.path) {
         downloadFolderInput.value = msg.path;
@@ -117,17 +163,39 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function logMessage(text) {
+    if (!logArea) return;
     logArea.classList.remove("hidden");
     logArea.textContent += text + "\n";
     logArea.scrollTop = logArea.scrollHeight;
   }
 
+  // Reconnect buttons
+  if (reconnectBtn) {
+    reconnectBtn.addEventListener("click", () => {
+      logMessage("Attempting to reconnect to native host...");
+      connectNativeHost();
+    });
+  }
+
+  if (alertRetryBtn) {
+    alertRetryBtn.addEventListener("click", () => {
+      logMessage("Attempting to reconnect to native host...");
+      connectNativeHost();
+    });
+  }
+
   // Browse folder button
   browseBtn.addEventListener("click", () => {
-    browseBtn.disabled = true;
-    if (!port) {
+    if (!port || !isConnected) {
       connectNativeHost();
     }
+
+    if (!port) {
+      logMessage("Cannot open folder picker: Native Host is offline. Please run install_all.bat.");
+      return;
+    }
+
+    browseBtn.disabled = true;
     try {
       port.postMessage({
         action: "select_folder",
@@ -150,16 +218,24 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
+    if (!port || !isConnected) {
+      connectNativeHost();
+    }
+
+    if (!port) {
+      progressContainer.classList.remove("hidden");
+      statusText.textContent = "Host is Offline!";
+      downloadBtn.disabled = false;
+      logMessage("Error: Native host is offline. Make sure you ran 'install_all.bat' (or 'install_host.bat') and Python is installed.");
+      return;
+    }
+
     downloadBtn.disabled = true;
     progressContainer.classList.remove("hidden");
     progressBar.style.width = "0%";
     percentText.textContent = "0%";
     statusText.textContent = "Sending download task...";
     logArea.textContent = "";
-
-    if (!port) {
-      connectNativeHost();
-    }
 
     try {
       port.postMessage({
@@ -175,6 +251,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // Connect on load
+  // Connect immediately on popup open
   connectNativeHost();
 });

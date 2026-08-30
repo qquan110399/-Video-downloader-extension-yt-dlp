@@ -16,7 +16,25 @@
         </svg>
         <span>yt-dlp Downloader</span>
       </div>
-      <span class="badge" id="hostStatus">Checking Host...</span>
+      <div class="status-wrap">
+        <span class="badge" id="hostStatus">Connecting...</span>
+        <button id="reconnectBtn" class="btn-icon hidden" title="Retry Connection">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Offline Help Alert -->
+    <div id="offlineNotice" class="alert-box hidden">
+      <div class="alert-title">⚠️ Native Host Offline</div>
+      <div class="alert-body">
+        Please run <code>install_all.bat</code> (or <code>install_host.bat</code>) in the extension folder and make sure Python is installed.
+      </div>
+      <button id="alertRetryBtn" class="btn-sm">Retry Connection</button>
     </div>
 
     <div class="form-group">
