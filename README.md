@@ -13,6 +13,10 @@
 
 A fast, lightweight, and local browser extension for **Mozilla Firefox, Google Chrome, Microsoft Edge, Brave, and Opera** to download videos and audio from YouTube, Twitch, and over 1,000+ supported websites directly via [yt-dlp](https://github.com/yt-dlp/yt-dlp) – 100% free, ad-free, without file size limits or third-party cloud servers.
 
+<p align="center">
+  <img src="assets/screenshot.png" alt="yt-dlp Video Downloader UI Preview" width="400" />
+</p>
+
 ---
 
 ## ✨ Features

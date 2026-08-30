@@ -54,6 +54,9 @@ Copy-Item -Path (Join-Path $scriptDir "uninstall.bat") -Destination $tempStaging
 Copy-Item -Path (Join-Path $scriptDir "uninstall.ps1") -Destination $tempStaging -Force
 Copy-Item -Path (Join-Path $scriptDir "README.md") -Destination $tempStaging -Force
 Copy-Item -Path (Join-Path $scriptDir "LICENSE") -Destination $tempStaging -Force
+if (Test-Path (Join-Path $scriptDir "assets")) {
+    Copy-Item -Path (Join-Path $scriptDir "assets") -Destination (Join-Path $tempStaging "assets") -Recurse -Force
+}
 
 # Clean __pycache__ in staging
 Get-ChildItem -Path $tempStaging -Recurse -Filter "__pycache__" | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
